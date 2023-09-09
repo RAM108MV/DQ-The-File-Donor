@@ -654,7 +654,7 @@ async def save_template(client, message):
     sts = await message.reply("Cʜᴇᴄᴋɪɴɢ ᴛᴇᴍᴘʟᴀᴛᴇ...")
     userid = message.from_user.id if message.from_user else None
     if not userid:
-        return await message.reply(f"ʏᴏᴜ ᴀʀᴇ ᴀɴᴏɴʏᴍᴏᴜꜱ ᴀᴅᴍɪɴ. ᴜꜱᴇ /connect {message.chat.id} ɪɴ PM"
+        return await message.reply(f"ʏᴏᴜ ᴀʀᴇ ᴀɴᴏɴʏᴍᴏᴜꜱ ᴀᴅᴍɪɴ. ᴜꜱᴇ /connect {message.chat.id} ɪɴ PM")
     chat_type = message.chat.type
 
     if chat_type == enums.ChatType.PRIVATE:
