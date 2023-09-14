@@ -77,7 +77,7 @@ async def start(client, message):
         btn = [
             [
                 InlineKeyboardButton(
-                    "✅ ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ ✅", url=https://t.me/HDMAXX
+                    "✅ ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ ✅", url=invite_link.invite_link
                 )
             ]
         ]
