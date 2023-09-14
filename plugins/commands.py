@@ -157,7 +157,7 @@ async def start(client, message):
                     reply_markup=InlineKeyboardMarkup(
                         [
                          [
-                          InlineKeyboardButton(' 🎭 ᴏᴜʀ ɢʀᴏᴜᴘ 🎭', url=GRP_LNK)
+                          InlineKeyboardButton('🎭 ᴏᴜʀ ɢʀᴏᴜᴘ 🎭', url=GRP_LNK)
                        ],[
                           InlineKeyboardButton("❌ᴄʟᴏꜱᴇ❌", callback_data='close_data')
                          ]
@@ -175,7 +175,7 @@ async def start(client, message):
                     reply_markup=InlineKeyboardMarkup(
                         [
                          [
-                          InlineKeyboardButton(' 🎭 ᴏᴜʀ ɢʀᴏᴜᴘ 🎭', url=GRP_LNK)
+                          InlineKeyboardButton('🎭 ᴏᴜʀ ɢʀᴏᴜᴘ 🎭', url=GRP_LNK)
                        ],[
                           InlineKeyboardButton("❌ᴄʟᴏꜱᴇ❌", callback_data='close_data')
                          ]
@@ -293,7 +293,7 @@ async def start(client, message):
                 reply_markup=InlineKeyboardMarkup(
                     [
                          [
-                          InlineKeyboardButton(' 🎭 ᴏᴜʀ ɢʀᴏᴜᴘ 🎭', url=GRP_LNK)
+                          InlineKeyboardButton('🎭 ᴏᴜʀ ɢʀᴏᴜᴘ 🎭', url=GRP_LNK)
                        ],[
                           InlineKeyboardButton("❌ᴄʟᴏꜱᴇ❌", callback_data='close_data')
                          ]
@@ -346,7 +346,7 @@ async def start(client, message):
         reply_markup=InlineKeyboardMarkup(
             [
                          [
-                          InlineKeyboardButton(' 🎭 ᴏᴜʀ ɢʀᴏᴜᴘ 🎭', url=GRP_LNK)
+                          InlineKeyboardButton('🎭 ᴏᴜʀ ɢʀᴏᴜᴘ 🎭', url=GRP_LNK)
                        ],[
                           InlineKeyboardButton("❌ᴄʟᴏꜱᴇ❌", callback_data='close_data')
                          ]
