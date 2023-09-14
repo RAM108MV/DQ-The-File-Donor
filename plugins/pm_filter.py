@@ -395,21 +395,19 @@ async def select_language(bot, query):
     if int(userid) not in [query.from_user.id, 0]:
         return await query.answer(script.ALRT_TXT.format(query.from_user.first_name), show_alert=True)
     btn = [[
-        InlineKeyboardButton("Sᴇʟᴇᴄᴛ Yᴏᴜʀ Dᴇꜱɪʀᴇᴅ Lᴀɴɢᴜᴀɢᴇ ↓", callback_data=f"lang#{userid}#unknown")
+        InlineKeyboardButton("👇 sᴇʟᴇᴄᴛ ʏᴏᴜʀ ʟᴀɴɢᴜᴀɢᴇ 👇", callback_data=f"lang#{userid}#unknown")
     ],[
-        InlineKeyboardButton("Eɴɢʟɪꜱʜ", callback_data=f"lang#{userid}#eng"),
-        InlineKeyboardButton("Tᴀᴍɪʟ", callback_data=f"lang#{userid}#tam"),
-        InlineKeyboardButton("Hɪɴᴅɪ", callback_data=f"lang#{userid}#hin")
+        InlineKeyboardButton("ʜɪɴᴅɪ", callback_data=f"lang#{userid}#hin")
     ],[
-        InlineKeyboardButton("Kᴀɴɴᴀᴅᴀ", callback_data=f"lang#{userid}#kan"),
-        InlineKeyboardButton("Tᴇʟᴜɢᴜ", callback_data=f"lang#{userid}#tel")
+        InlineKeyboardButton("ᴇɴɢʟɪꜱʜ", callback_data=f"lang#{userid}#eng")
     ],[
-        InlineKeyboardButton("Mᴀʟᴀʏᴀʟᴀᴍ", callback_data=f"lang#{userid}#mal")
+        InlineKeyboardButton("ᴛᴀᴍɪʟ", callback_data=f"lang#{userid}#tam")
     ],[
-        InlineKeyboardButton("Mᴜʟᴛɪ Aᴜᴅɪᴏ", callback_data=f"lang#{userid}#multi"),
-        InlineKeyboardButton("Dᴜᴀʟ Aᴜᴅɪᴏ", callback_data=f"lang#{userid}#dual")
+        InlineKeyboardButton("ᴛᴇʟᴜɢᴜ", callback_data=f"lang#{userid}#tel")
     ],[
-        InlineKeyboardButton("Gᴏ Bᴀᴄᴋ", callback_data=f"lang#{userid}#home")
+        InlineKeyboardButton("ᴍᴀʟᴀʏᴀʟᴀᴍ", callback_data=f"lang#{userid}#mal")
+    ],[
+        InlineKeyboardButton("ʙᴀᴄᴋ", callback_data=f"lang#{userid}#home")
     ]]
     try:
         await query.edit_message_reply_markup(
