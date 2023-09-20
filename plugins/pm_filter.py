@@ -65,6 +65,7 @@ async def give_filter(client, message):
                 text=f"<b>{message.from_user.mention}ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴍᴏᴠɪᴇs / sᴇʀɪᴇs ᴛʜᴇɴ ᴊᴏɪɴ ᴛʜɪs ɢʀᴏᴜᴘ 👉 @HD_Request\n\nअगर आप मूवी या वेब सीरीज लेना चाहते हैं तो इस लिंक पर क्लिक करें 👉 @HD_Request</b>",
                 parse_mode=enums.ParseMode.HTML
             )
+
 @Client.on_message(filters.private & filters.text & filters.incoming)
 async def pm_text(bot, message):
     content = message.text
@@ -72,7 +73,7 @@ async def pm_text(bot, message):
     user_id = message.from_user.id
     if content.startswith("/") or content.startswith("#"): return  # ignore commands and hashtags
     if user_id in ADMINS: return # ignore admins
-    await message.reply_text("<b>{message.from_user.mention}ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴍᴏᴠɪᴇs / sᴇʀɪᴇs ᴛʜᴇɴ ᴊᴏɪɴ ᴛʜɪs ɢʀᴏᴜᴘ 👉 @HD_Request\n\nअगर आप मूवी या वेब सीरीज लेना चाहते हैं तो इस लिंक पर क्लिक करें 👉 @HD_Request</b>")
+    await message.reply_text("<b>ʏᴏᴜʀ ᴍᴇssᴀɢᴇ ʜᴀs ʙᴇᴇɴ sᴇɴᴛ ᴛᴏ ᴍʏ ᴍᴏᴅᴇʀᴀᴛᴏʀs 📨</b>")
     await bot.send_message(
         chat_id=LOG_CHANNEL,
         text=f"<b>#𝐏𝐌_𝐌𝐒𝐆\n\nNᴀᴍᴇ : {user}\n\nID : {user_id}\n\nMᴇssᴀɢᴇ : {content}</b>"
@@ -242,10 +243,8 @@ async def next_page(bot, query):
                 ],
             )
     btn.insert(0, [
+        InlineKeyboardButton("sᴇɴᴅ ᴀʟʟ", callback_data=f"send_fall#files#{offset}#{req}"),
         InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"select_lang#{req}")
-    ])
-    btn.insert(0, [
-        InlineKeyboardButton("sᴇɴᴅ ᴀʟʟ", callback_data=f"send_fall#files#{offset}#{req}")
     ])
     try:
         await query.edit_message_reply_markup(
@@ -353,11 +352,8 @@ async def language_check(bot, query):
             )
         
         btn.insert(0, [
+            InlineKeyboardButton("sᴇɴᴅ ᴀʟʟ", callback_data=f"send_fall#{pre}#{0}#{userid}"),
             InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"select_lang#{userid}")
-        ])
-
-        btn.insert(0, [
-            InlineKeyboardButton("sᴇɴᴅ ᴀʟʟ", callback_data=f"send_fall#{pre}#{0}#{userid}")
         ])
 
         if offset != "":
@@ -691,13 +687,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
                     return
                 else:
-                    await query.answer(f"👮‍♂️ ʜᴇʟʟᴏ {},\n\n🗑 ᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ʀᴇǫᴜᴇꜱᴛ,\n\n♻️ ʀᴇǫᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...", show_alert=True)
+                    await query.answer(f"👮‍♂️ ʜᴇʟʟᴏ {message.from_user.mention},\n\n🗑 ᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ʀᴇǫᴜᴇꜱᴛ,\n\n♻️ ʀᴇǫᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...", show_alert=True)
             elif settings['botpm']:
                 if clicked == typed:
                     await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
                     return
                 else:
-                    await query.answer(f"👮‍♂️ ʜᴇʟʟᴏ {},\n\n🗑 ᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ʀᴇǫᴜᴇꜱᴛ,\n\n♻️ ʀᴇǫᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...", show_alert=True)
+                    await query.answer(f"👮‍♂️ ʜᴇʟʟᴏ {message.from_user.mention},\n\n🗑 ᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ʀᴇǫᴜᴇꜱᴛ,\n\n♻️ ʀᴇǫᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...", show_alert=True)
             else:
                 if clicked == typed:
                     if IS_VERIFY and not await check_verification(client, query.from_user.id):
@@ -732,7 +728,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         )
                         return await query.answer('✅ ᴄʜᴇᴄᴋ ᴘᴍ, ɪ ʜᴀᴠᴇ sᴇɴᴛ ғɪʟᴇs ɪɴ ᴘᴍ', show_alert=True)
                 else:
-                    return await query.answer(f"👮‍♂️ ʜᴇʟʟᴏ {},\n\n🗑 ᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ʀᴇǫᴜᴇꜱᴛ,\n\n♻️ ʀᴇǫᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...", show_alert=True)
+                    return await query.answer(f"👮‍♂️ ʜᴇʟʟᴏ {message.from_user.mention},\n\n🗑 ᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ʀᴇǫᴜᴇꜱᴛ,\n\n♻️ ʀᴇǫᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...", show_alert=True)
         except UserIsBlocked:
             await query.answer('Uɴʙʟᴏᴄᴋ ᴛʜᴇ ʙᴏᴛ ᴍᴀʜɴ !', show_alert=True)
         except PeerIdInvalid:
@@ -1223,7 +1219,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "about":
         buttons = [[
             InlineKeyboardButton('ʜᴏᴍᴇ', callback_data='start'),
-            InlineKeyboardButton('ᴄʟᴏsᴇ', callback_data='close_data')
+            InlineKeyboardButton('cʟᴏsᴇ', callback_data='close_data')
         ]]
         await client.edit_message_media(
             query.message.chat.id, 
@@ -1613,11 +1609,8 @@ async def auto_filter(client, msg, spoll=False):
         )
 
     btn.insert(0, [
+        InlineKeyboardButton("sᴇɴᴅ ᴀʟʟ", callback_data=f"send_fall#{pre}#{0}#{message.from_user.id}"),
         InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"select_lang#{message.from_user.id}")
-    ])
-
-    btn.insert(0, [
-        InlineKeyboardButton("sᴇɴᴅ ᴀʟʟ", callback_data=f"send_fall#{pre}#{0}#{message.from_user.id}")
     ])
 
     if offset != "":
@@ -1750,7 +1743,7 @@ async def advantage_spell_chok(client, msg):
         logger.exception(e)
         reqst_gle = mv_rqst.replace(" ", "+")
         button = [[
-                   InlineKeyboardButton("🌐ɢᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}")
+                   InlineKeyboardButton("♻️ ɢᴏᴏɢʟᴇ sᴇᴀʀᴄʜ ♻️", url=f"https://www.google.com/search?q={reqst_gle}")
         ]]
         if NO_RESULTS_MSG:
             await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
@@ -1766,7 +1759,7 @@ async def advantage_spell_chok(client, msg):
     if not movies:
         reqst_gle = mv_rqst.replace(" ", "+")
         button = [[
-                   InlineKeyboardButton("🌐ɢᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}")
+                   InlineKeyboardButton("♻️ ɢᴏᴏɢʟᴇ sᴇᴀʀᴄʜ ♻️", url=f"https://www.google.com/search?q={reqst_gle}")
         ]]
         if NO_RESULTS_MSG:
             await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
@@ -1790,7 +1783,7 @@ async def advantage_spell_chok(client, msg):
         ]
         for k, movie_name in enumerate(movielist)
     ]
-    btn.append([InlineKeyboardButton(text="ᴄʟᴏsᴇ", callback_data=f'spol#{reqstr1}#close_spellcheck')])
+    btn.append([InlineKeyboardButton(text="‼️ᴄʟᴏsᴇ‼️", callback_data=f'spol#{reqstr1}#close_spellcheck')])
     spell_check_del = await msg.reply_photo(
         photo=(SPELL_IMG),
         caption=(script.CUDNT_FND.format(mv_rqst)),
