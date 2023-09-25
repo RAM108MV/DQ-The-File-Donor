@@ -73,7 +73,7 @@ async def pm_text(bot, message):
     user_id = message.from_user.id
     if content.startswith("/") or content.startswith("#"): return  # ignore commands and hashtags
     if user_id in ADMINS: return # ignore admins
-    await message.reply_text("<b>ʏᴏᴜʀ ᴍᴇssᴀɢᴇ ʜᴀs ʙᴇᴇɴ sᴇɴᴛ ᴛᴏ ᴍʏ ᴍᴏᴅᴇʀᴀᴛᴏʀs 📨</b>")
+    await message.reply_text("<b>{message.from_user.mention}ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴍᴏᴠɪᴇs / sᴇʀɪᴇs ᴛʜᴇɴ ᴊᴏɪɴ ᴛʜɪs ɢʀᴏᴜᴘ 👉 @HD_Request\n\nअगर आप मूवी या वेब सीरीज लेना चाहते हैं तो इस लिंक पर क्लिक करें 👉 @HD_Request</b>")
     await bot.send_message(
         chat_id=LOG_CHANNEL,
         text=f"<b>#𝐏𝐌_𝐌𝐒𝐆\n\nNᴀᴍᴇ : {user}\n\nID : {message.from_user.mention}\n\nMᴇssᴀɢᴇ : {content}</b>"
