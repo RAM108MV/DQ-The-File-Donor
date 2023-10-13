@@ -48,7 +48,7 @@ DATABASE_NAME = environ.get('DATABASE_NAME', "newbot")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Others
-IS_VERIFY = is_enabled((environ.get('IS_VERIFY', 'True')), True)
+IS_VERIFY = is_enabled((environ.get('IS_VERIFY', 'False')), False)
 HOW_TO_VERIFY = environ.get('HOW_TO_VERIFY', "https://t.me/c/1845700490/3")
 VERIFY2_URL = environ.get('VERIFY2_URL', "nanolinks.in")
 VERIFY2_API = environ.get('VERIFY2_API', "e8e04a47de067ef3e83f767bb9b18a3f68e3fdec")
