@@ -50,9 +50,9 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 # Others
 IS_VERIFY = is_enabled((environ.get('IS_VERIFY', 'True')), True)
 HOW_TO_VERIFY = environ.get('HOW_TO_VERIFY', "https://t.me/c/1845700490/3")
-VERIFY2_URL = environ.get('VERIFY2_URL', "Nanolinks.in")
+VERIFY2_URL = environ.get('VERIFY2_URL', "nanolinks.in")
 VERIFY2_API = environ.get('VERIFY2_API', "88fe98ac68605c50a46d61bdf7ed17255cfab34b")
-SHORTLINK_URL = environ.get('SHORTLINK_URL', 'Nanolinks.in')
+SHORTLINK_URL = environ.get('SHORTLINK_URL', 'nanolinks.in')
 SHORTLINK_API = environ.get('SHORTLINK_API', '88fe98ac68605c50a46d61bdf7ed17255cfab34b')
 IS_SHORTLINK = is_enabled((environ.get('IS_SHORTLINK', 'True')), True)
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
